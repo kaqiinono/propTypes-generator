@@ -72,7 +72,6 @@ function buildArrayExpression(propTypes) {
 
 function buildObjectExpression(propTypes) {
 	let properties = propTypes.map((item, index) => {
-		console.log('item.name==>',item,item.name,item.id)
 		let propertyNode = property('init', id(item.name), buildMemberExpression(item));
 		let lastItem = propTypes[index - 1];
 		if (lastItem && lastItem.comment) {
@@ -108,7 +107,6 @@ function buildClassPropTypes(propTypes, options) {
 }
 
 function buildPropTypes(propTypes, options) {
-	console.log('propTypes',propTypes)
 	if (options.isRequired) {
 		propTypes.forEach(item => {
 			item.isRequired = true;
