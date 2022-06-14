@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "patch": "npm version patch -m 'Update Version patch by NPM' | xargs git push origin && git push",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run patch && npm run build"
   },
   "devDependencies": {
     "esbuild": "^0.14.43",
