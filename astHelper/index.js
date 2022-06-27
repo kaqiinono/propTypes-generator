@@ -1,6 +1,9 @@
 const flow = require('flow-parser');
 
 function flowAst(code) {
+  if (!code) {
+    return;
+  }
   try {
     return flow.parse(code, {
       esproposal_decorators: true,
@@ -10,7 +13,7 @@ function flowAst(code) {
       esproposal_optional_chaining: true,
       esproposal_nullish_coalescing: true,
       types: true
-    })
+    });
   } catch (error) {
     console.log('suming-log', error);
   }
