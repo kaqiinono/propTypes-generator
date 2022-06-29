@@ -1,6 +1,6 @@
 const astHelper = require('./astHelper');
 const actionHelper = require('./utils/actionHelper');
-const { validFile } = require('./actions/finalExport');
+const { validFile, findExports } = require('./actions/finalExport');
 
 async function generate(srcCode, componentName) {
   if (!srcCode) {
@@ -23,5 +23,7 @@ async function generate(srcCode, componentName) {
   return result;
 }
 
-exports.generate = generate;
-exports.validFile = validFile;
+
+module.exports = {
+  generate, findExports, validFile
+};
