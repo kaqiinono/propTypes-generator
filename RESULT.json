@@ -1,0 +1,1364 @@
+{
+  "code": "Demo.propTypes = {\n  large: PropTypes.any\n}",
+  "options": {
+    "name": "Demo",
+    "codeStyle": "default"
+  },
+  "componentNode": {
+    "type": "FunctionDeclaration",
+    "loc": {
+      "source": null,
+      "start": {
+        "line": 5,
+        "column": 15
+      },
+      "end": {
+        "line": 20,
+        "column": 1
+      }
+    },
+    "range": [
+      117,
+      565
+    ],
+    "id": {
+      "type": "Identifier",
+      "loc": {
+        "source": null,
+        "start": {
+          "line": 5,
+          "column": 24
+        },
+        "end": {
+          "line": 5,
+          "column": 28
+        }
+      },
+      "range": [
+        126,
+        130
+      ],
+      "name": "Demo",
+      "typeAnnotation": null,
+      "optional": false
+    },
+    "params": [
+      {
+        "type": "ObjectPattern",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 5,
+            "column": 29
+          },
+          "end": {
+            "line": 5,
+            "column": 36
+          }
+        },
+        "range": [
+          131,
+          138
+        ],
+        "properties": [
+          {
+            "type": "Property",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 5,
+                "column": 30
+              },
+              "end": {
+                "line": 5,
+                "column": 35
+              }
+            },
+            "range": [
+              132,
+              137
+            ],
+            "key": {
+              "type": "Identifier",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 5,
+                  "column": 30
+                },
+                "end": {
+                  "line": 5,
+                  "column": 35
+                }
+              },
+              "range": [
+                132,
+                137
+              ],
+              "name": "large",
+              "typeAnnotation": null,
+              "optional": false
+            },
+            "value": {
+              "type": "Identifier",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 5,
+                  "column": 30
+                },
+                "end": {
+                  "line": 5,
+                  "column": 35
+                }
+              },
+              "range": [
+                132,
+                137
+              ],
+              "name": "large",
+              "typeAnnotation": null,
+              "optional": false
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": true,
+            "computed": false,
+            "decorators": null
+          }
+        ],
+        "typeAnnotation": null,
+        "decorators": null
+      }
+    ],
+    "body": {
+      "type": "BlockStatement",
+      "loc": {
+        "source": null,
+        "start": {
+          "line": 5,
+          "column": 38
+        },
+        "end": {
+          "line": 20,
+          "column": 1
+        }
+      },
+      "range": [
+        140,
+        565
+      ],
+      "body": [
+        {
+          "type": "ReturnStatement",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 6,
+              "column": 4
+            },
+            "end": {
+              "line": 19,
+              "column": 6
+            }
+          },
+          "range": [
+            146,
+            563
+          ],
+          "argument": {
+            "type": "JSXElement",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 7,
+                "column": 8
+              },
+              "end": {
+                "line": 18,
+                "column": 14
+              }
+            },
+            "range": [
+              163,
+              556
+            ],
+            "openingElement": {
+              "type": "JSXOpeningElement",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 7,
+                  "column": 8
+                },
+                "end": {
+                  "line": 7,
+                  "column": 42
+                }
+              },
+              "range": [
+                163,
+                197
+              ],
+              "name": {
+                "type": "JSXIdentifier",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 7,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 12
+                  }
+                },
+                "range": [
+                  164,
+                  167
+                ],
+                "name": "div",
+                "optional": false,
+                "typeAnnotation": null
+              },
+              "attributes": [
+                {
+                  "type": "JSXAttribute",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 7,
+                      "column": 13
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 41
+                    }
+                  },
+                  "range": [
+                    168,
+                    196
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 7,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 7,
+                        "column": 22
+                      }
+                    },
+                    "range": [
+                      168,
+                      177
+                    ],
+                    "name": "className",
+                    "optional": false,
+                    "typeAnnotation": null
+                  },
+                  "value": {
+                    "type": "Literal",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 7,
+                        "column": 23
+                      },
+                      "end": {
+                        "line": 7,
+                        "column": 41
+                      }
+                    },
+                    "range": [
+                      178,
+                      196
+                    ],
+                    "value": "jmtd-button-demo",
+                    "raw": "'jmtd-button-demo'",
+                    "regex": null
+                  }
+                }
+              ],
+              "selfClosing": false
+            },
+            "closingElement": {
+              "type": "JSXClosingElement",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 18,
+                  "column": 8
+                },
+                "end": {
+                  "line": 18,
+                  "column": 14
+                }
+              },
+              "range": [
+                550,
+                556
+              ],
+              "name": {
+                "type": "JSXIdentifier",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 18,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 13
+                  }
+                },
+                "range": [
+                  552,
+                  555
+                ],
+                "name": "div",
+                "optional": false,
+                "typeAnnotation": null
+              }
+            },
+            "children": [
+              {
+                "type": "JSXText",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 7,
+                    "column": 42
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 12
+                  }
+                },
+                "range": [
+                  197,
+                  210
+                ],
+                "value": "\n            ",
+                "raw": "\n            ",
+                "regex": null
+              },
+              {
+                "type": "JSXElement",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 8,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 21
+                  }
+                },
+                "range": [
+                  210,
+                  294
+                ],
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 8,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 8,
+                      "column": 52
+                    }
+                  },
+                  "range": [
+                    210,
+                    250
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 8,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 8,
+                        "column": 19
+                      }
+                    },
+                    "range": [
+                      211,
+                      217
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  },
+                  "attributes": [
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 8,
+                          "column": 20
+                        },
+                        "end": {
+                          "line": 8,
+                          "column": 38
+                        }
+                      },
+                      "range": [
+                        218,
+                        236
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 8,
+                            "column": 20
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 28
+                          }
+                        },
+                        "range": [
+                          218,
+                          226
+                        ],
+                        "name": "semantic",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 8,
+                            "column": 29
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 38
+                          }
+                        },
+                        "range": [
+                          227,
+                          236
+                        ],
+                        "value": "primary",
+                        "raw": "'primary'",
+                        "regex": null
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 8,
+                          "column": 39
+                        },
+                        "end": {
+                          "line": 8,
+                          "column": 51
+                        }
+                      },
+                      "range": [
+                        237,
+                        249
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 8,
+                            "column": 39
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 43
+                          }
+                        },
+                        "range": [
+                          237,
+                          241
+                        ],
+                        "name": "size",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 8,
+                            "column": 44
+                          },
+                          "end": {
+                            "line": 8,
+                            "column": 51
+                          }
+                        },
+                        "range": [
+                          242,
+                          249
+                        ],
+                        "value": "large",
+                        "raw": "'large'",
+                        "regex": null
+                      }
+                    }
+                  ],
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 10,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 21
+                    }
+                  },
+                  "range": [
+                    285,
+                    294
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 10,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 20
+                      }
+                    },
+                    "range": [
+                      287,
+                      293
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  }
+                },
+                "children": [
+                  {
+                    "type": "JSXText",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 8,
+                        "column": 52
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 12
+                      }
+                    },
+                    "range": [
+                      250,
+                      285
+                    ],
+                    "value": "\n                large\n            ",
+                    "raw": "\n                large\n            ",
+                    "regex": null
+                  }
+                ]
+              },
+              {
+                "type": "JSXText",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 10,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 12
+                  }
+                },
+                "range": [
+                  294,
+                  307
+                ],
+                "value": "\n            ",
+                "raw": "\n            ",
+                "regex": null
+              },
+              {
+                "type": "JSXElement",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 11,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 54
+                  }
+                },
+                "range": [
+                  307,
+                  349
+                ],
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 11,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 39
+                    }
+                  },
+                  "range": [
+                    307,
+                    334
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 11,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 19
+                      }
+                    },
+                    "range": [
+                      308,
+                      314
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  },
+                  "attributes": [
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 11,
+                          "column": 20
+                        },
+                        "end": {
+                          "line": 11,
+                          "column": 38
+                        }
+                      },
+                      "range": [
+                        315,
+                        333
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 11,
+                            "column": 20
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 28
+                          }
+                        },
+                        "range": [
+                          315,
+                          323
+                        ],
+                        "name": "semantic",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 11,
+                            "column": 29
+                          },
+                          "end": {
+                            "line": 11,
+                            "column": 38
+                          }
+                        },
+                        "range": [
+                          324,
+                          333
+                        ],
+                        "value": "primary",
+                        "raw": "'primary'",
+                        "regex": null
+                      }
+                    }
+                  ],
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 11,
+                      "column": 45
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 54
+                    }
+                  },
+                  "range": [
+                    340,
+                    349
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 11,
+                        "column": 47
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 53
+                      }
+                    },
+                    "range": [
+                      342,
+                      348
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  }
+                },
+                "children": [
+                  {
+                    "type": "JSXText",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 11,
+                        "column": 39
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 45
+                      }
+                    },
+                    "range": [
+                      334,
+                      340
+                    ],
+                    "value": "middle",
+                    "raw": "middle",
+                    "regex": null
+                  }
+                ]
+              },
+              {
+                "type": "JSXText",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 11,
+                    "column": 54
+                  },
+                  "end": {
+                    "line": 12,
+                    "column": 12
+                  }
+                },
+                "range": [
+                  349,
+                  362
+                ],
+                "value": "\n            ",
+                "raw": "\n            ",
+                "regex": null
+              },
+              {
+                "type": "JSXElement",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 12,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 14,
+                    "column": 21
+                  }
+                },
+                "range": [
+                  362,
+                  446
+                ],
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 12,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 52
+                    }
+                  },
+                  "range": [
+                    362,
+                    402
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 12,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 19
+                      }
+                    },
+                    "range": [
+                      363,
+                      369
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  },
+                  "attributes": [
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 12,
+                          "column": 20
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 38
+                        }
+                      },
+                      "range": [
+                        370,
+                        388
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 12,
+                            "column": 20
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 28
+                          }
+                        },
+                        "range": [
+                          370,
+                          378
+                        ],
+                        "name": "semantic",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 12,
+                            "column": 29
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 38
+                          }
+                        },
+                        "range": [
+                          379,
+                          388
+                        ],
+                        "value": "primary",
+                        "raw": "'primary'",
+                        "regex": null
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 12,
+                          "column": 39
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 51
+                        }
+                      },
+                      "range": [
+                        389,
+                        401
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 12,
+                            "column": 39
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 43
+                          }
+                        },
+                        "range": [
+                          389,
+                          393
+                        ],
+                        "name": "size",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 12,
+                            "column": 44
+                          },
+                          "end": {
+                            "line": 12,
+                            "column": 51
+                          }
+                        },
+                        "range": [
+                          394,
+                          401
+                        ],
+                        "value": "small",
+                        "raw": "'small'",
+                        "regex": null
+                      }
+                    }
+                  ],
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 14,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 14,
+                      "column": 21
+                    }
+                  },
+                  "range": [
+                    437,
+                    446
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 14,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 14,
+                        "column": 20
+                      }
+                    },
+                    "range": [
+                      439,
+                      445
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  }
+                },
+                "children": [
+                  {
+                    "type": "JSXText",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 12,
+                        "column": 52
+                      },
+                      "end": {
+                        "line": 14,
+                        "column": 12
+                      }
+                    },
+                    "range": [
+                      402,
+                      437
+                    ],
+                    "value": "\n                small\n            ",
+                    "raw": "\n                small\n            ",
+                    "regex": null
+                  }
+                ]
+              },
+              {
+                "type": "JSXText",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 14,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 12
+                  }
+                },
+                "range": [
+                  446,
+                  459
+                ],
+                "value": "\n            ",
+                "raw": "\n            ",
+                "regex": null
+              },
+              {
+                "type": "JSXElement",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 15,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 17,
+                    "column": 21
+                  }
+                },
+                "range": [
+                  459,
+                  541
+                ],
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 15,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 51
+                    }
+                  },
+                  "range": [
+                    459,
+                    498
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 15,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 19
+                      }
+                    },
+                    "range": [
+                      460,
+                      466
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  },
+                  "attributes": [
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 15,
+                          "column": 20
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 38
+                        }
+                      },
+                      "range": [
+                        467,
+                        485
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 15,
+                            "column": 20
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 28
+                          }
+                        },
+                        "range": [
+                          467,
+                          475
+                        ],
+                        "name": "semantic",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 15,
+                            "column": 29
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 38
+                          }
+                        },
+                        "range": [
+                          476,
+                          485
+                        ],
+                        "value": "primary",
+                        "raw": "'primary'",
+                        "regex": null
+                      }
+                    },
+                    {
+                      "type": "JSXAttribute",
+                      "loc": {
+                        "source": null,
+                        "start": {
+                          "line": 15,
+                          "column": 39
+                        },
+                        "end": {
+                          "line": 15,
+                          "column": 50
+                        }
+                      },
+                      "range": [
+                        486,
+                        497
+                      ],
+                      "name": {
+                        "type": "JSXIdentifier",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 15,
+                            "column": 39
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 43
+                          }
+                        },
+                        "range": [
+                          486,
+                          490
+                        ],
+                        "name": "size",
+                        "optional": false,
+                        "typeAnnotation": null
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "loc": {
+                          "source": null,
+                          "start": {
+                            "line": 15,
+                            "column": 44
+                          },
+                          "end": {
+                            "line": 15,
+                            "column": 50
+                          }
+                        },
+                        "range": [
+                          491,
+                          497
+                        ],
+                        "value": "mini",
+                        "raw": "'mini'",
+                        "regex": null
+                      }
+                    }
+                  ],
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "loc": {
+                    "source": null,
+                    "start": {
+                      "line": 17,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 21
+                    }
+                  },
+                  "range": [
+                    532,
+                    541
+                  ],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 17,
+                        "column": 14
+                      },
+                      "end": {
+                        "line": 17,
+                        "column": 20
+                      }
+                    },
+                    "range": [
+                      534,
+                      540
+                    ],
+                    "name": "Button",
+                    "optional": false,
+                    "typeAnnotation": null
+                  }
+                },
+                "children": [
+                  {
+                    "type": "JSXText",
+                    "loc": {
+                      "source": null,
+                      "start": {
+                        "line": 15,
+                        "column": 51
+                      },
+                      "end": {
+                        "line": 17,
+                        "column": 12
+                      }
+                    },
+                    "range": [
+                      498,
+                      532
+                    ],
+                    "value": "\n                mini\n            ",
+                    "raw": "\n                mini\n            ",
+                    "regex": null
+                  }
+                ]
+              },
+              {
+                "type": "JSXText",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 17,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 8
+                  }
+                },
+                "range": [
+                  541,
+                  550
+                ],
+                "value": "\n        ",
+                "raw": "\n        ",
+                "regex": null
+              }
+            ]
+          }
+        }
+      ],
+      "directives": []
+    },
+    "async": false,
+    "generator": false,
+    "predicate": null,
+    "expression": false,
+    "returnType": null,
+    "typeParameters": null,
+    "defaults": [],
+    "rest": null
+  },
+  "propTypesNode": null,
+  "defaultPropsNode": null,
+  "propTypes": [
+    {
+      "_name": "large",
+      "id": "large"
+    }
+  ]
+}

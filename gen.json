@@ -1,0 +1,49 @@
+{
+  "code": "Button.propTypes = {\n  primary: PropTypes.boolean,\n  backgroundColor: PropTypes.string,\n  size: PropTypes.array,\n  label: PropTypes.string.isRequired,\n  children: PropTypes.node.isRequired,\n  onClick: PropTypes.func\n}",
+  "propTypes": [
+    {
+      "_name": "primary",
+      "id": "primary",
+      "_type": "boolean",
+      "defaultValue": "false"
+    },
+    {
+      "_name": "backgroundColor",
+      "id": "backgroundColor",
+      "_type": "string",
+      "_childTypes": [
+        {
+          "_name": "backgroundColor"
+        }
+      ]
+    },
+    {
+      "_name": "size",
+      "id": "size",
+      "_type": "array",
+      "defaultValue": "\"medium\"",
+      "value": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    {
+      "_name": "label",
+      "id": "label",
+      "_type": "string",
+      "_isRequired": true
+    },
+    {
+      "_name": "children",
+      "id": "children",
+      "_type": "node",
+      "_isRequired": true
+    },
+    {
+      "_name": "onClick",
+      "_type": "func",
+      "defaultValue": "() => {}"
+    }
+  ]
+}

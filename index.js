@@ -27,9 +27,7 @@ async function generate(srcCode, componentName) {
 exports.generate = generate;
 exports.flowAst = astHelper.flowAst;
 
-// // const path = require('path');
-// const fs = require('fs');
-// // const srcCode = fs.readFileSync(path.resolve(__dirname,'./Button.jsx'));
+
 // const { files } = require('./files.json');
 // const { findExports } = require('./actions/finalExport');
 // const result = [];
@@ -40,3 +38,9 @@ exports.flowAst = astHelper.flowAst;
 //
 //   generate(validFile(files, r.filePath)?.code, r.fileName).then(d => fs.writeFileSync('./RESULT.json', JSON.stringify(d)))
 // });
+
+
+const path = require('path');
+const fs = require('fs');
+const srcCode = fs.readFileSync(path.resolve(__dirname,'./Button.jsx'));
+generate(srcCode,'Button')
