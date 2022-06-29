@@ -31,7 +31,7 @@ function getImportPath(path, callback) {
 }
 
 function validFile(files, name) {
-  if(!name){
+  if (!name) {
     return;
   }
   if (name.endsWith('.js') || name.endsWith('.jsx')) {
@@ -82,6 +82,27 @@ function findExports(files, filePath = '/index.js', result = []) {
   return result;
 }
 
+async function generate(srcCode, componentName) {
+  if (!srcCode) {
+    return;
+  }
+
+  if (!componentName) {
+    throw new Error('You must select the text as a Component\'s name !');
+    return;
+  }
+
+  const ast = astHelper.flowAst(String(srcCode));
+  if (!ast) {
+    throw new Error('Parse JS file error !');
+    return;
+  }
+  // merge config to options
+  const options = Object.assign({}, {}, { name: componentName });
+  const result = await actionHelper.generatePropTypesCode(ast, options);
+  return result;
+}
+
 module.exports = {
-  validFile, findExports
+  validFile, findExports, generate
 };
