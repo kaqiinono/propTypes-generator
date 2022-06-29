@@ -1,6 +1,5 @@
 const recast = require('recast');
 const astHelper = require('../astHelper');
-const { flowAst } = require('../astHelper');
 
 // const TNT = recast.types.namedTypes;
 //
@@ -14,9 +13,9 @@ function getExportPath(path, result, filePath) {
       filePath: filePath
     });
   }
-  if (node.declaration && node.declaration.id?.name) {
+  if (node.declaration && node.declaration.id && node.declaration.id.name) {
     result.push({
-      fileName: node.declaration.id?.name,
+      fileName: node.declaration.id.name,
       filePath: filePath
     });
   }
@@ -43,7 +42,7 @@ function validFile(files, name) {
 
 function findFromImport(files, filePath, result = []) {
   const fileName = validFile(files, filePath);
-  const ast = fileName && astHelper.flowAst(fileName?.code);
+  const ast = fileName && astHelper.flowAst(fileName && fileName.code);
   if (ast) {
     recast.visit(ast, {
       visitImportDeclaration: function(path) {
@@ -59,7 +58,7 @@ function findFromImport(files, filePath, result = []) {
 
 function findExports(files, filePath = '/index.js', result = []) {
   const fileName = validFile(files, filePath);
-  const ast = astHelper.flowAst(fileName?.code);
+  const ast = astHelper.flowAst(fileName && fileName.code);
   if (ast) {
     recast.visit(ast, {
       visitExportAllDeclaration: function(path) {
