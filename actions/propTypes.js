@@ -54,7 +54,7 @@ function findPropTypesByPropsIdentity(ast, options) {
     let firstParams = ast.params[0];
     if (firstParams.type === 'Identifier') {
       identity = ast.params[0].name;
-    } else if (firstParams.type === 'ObjectPattern') {
+    } else if (firstParams.type === 'ObjectPattexrn') {
       let newPropTypes = findAndCompletePropTypes(ast, findPropTypesInObjectPattern(firstParams, options), options);
       propTypes = propTypesHelper.customMergePropTypes(propTypes, newPropTypes, options.sort);
     }
@@ -243,17 +243,20 @@ function findUpdateSpecialPropTypes(typeNode, name, comments = []) {
 }
 
 function astParser(p) {
-  if (p.ast) {
+  if (p.type === 'oneOf') {
+    p.value = p.ast.elements.map(e => e.value);
+    p.type = p.value[0] && typeof p.value[0] || 'any';
+  } else if (p.ast) {
     if (p.ast.type === 'ArrayExpression') {
       p.type = 'array';
       p.value = p.ast.elements.map(e => e.value);
-      delete p.ast;
     }
   }
+  delete p.ast;
 }
 
-function typeConverter(p){
-  p._type = constants.toTypes[p._type]||p._type;
+function typeConverter(p) {
+  p._type = constants.toTypes[p._type] || p._type;
 }
 
 function findPropTypesInObjectNode(objectNode, comments = []) {
@@ -270,7 +273,7 @@ function findPropTypesInObjectNode(objectNode, comments = []) {
         let commentNode = comments.find(comment => comment.range[0] >= start && comment.range[1] <= end);
         commentNode && (propType.comment = commentNode.value);
         astParser(propType);
-        typeConverter(propType)
+        typeConverter(propType);
         propTypes.push(propType);
       }
     }
@@ -291,6 +294,10 @@ function findPropTypesInPropTypeNode(propNode, comments) {
   }
 }
 
+function defaultValueFormatter(v) {
+  return v && typeof v === 'string' ? v.replace(/'|"/g, '') : v.defaultValue;
+}
+
 function findPropTypesInDefaultPropsNode(ast, options) {
   let propTypes = [];
   if (ast) {
@@ -304,6 +311,7 @@ function findPropTypesInDefaultPropsNode(ast, options) {
           propTypesHelper.updatePropTypeByNode(value, props);
           if (props.type !== 'any') {
             props.defaultValue = recast.prettyPrint(value, setting.getCodeStyle(options)).code;
+            props.defaultValue = defaultValueFormatter(props.defaultValue);
           }
           propTypes.push(props);
         }
@@ -329,6 +337,7 @@ function findPropTypesInObjectPattern(ast, options) {
           propTypesHelper.updatePropTypeByNode(right, props);
           if (props.type !== 'any') {
             props.defaultValue = recast.prettyPrint(right, setting.getCodeStyle(options)).code;
+            props.defaultValue = defaultValueFormatter(props.defaultValue);
           }
           props.id = left.name;
           propTypes.push(props);
