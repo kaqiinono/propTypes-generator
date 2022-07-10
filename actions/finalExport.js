@@ -14,9 +14,11 @@ function getExportPath(path, result, filePath) {
       filePath: filePath
     });
   }
-  if (node.declaration && node.declaration.id?.name) {
+
+  const fileName = node.declaration && (node.declaration.id?.name || node.declaration.name);
+  if (fileName) {
     result.push({
-      fileName: node.declaration.id?.name,
+      fileName: fileName,
       filePath: filePath
     });
   }
@@ -32,7 +34,7 @@ function getImportPath(path, callback) {
 }
 
 function validFile(files, name) {
-  if(!name){
+  if (!name) {
     return;
   }
   if (name.endsWith('.js') || name.endsWith('.jsx')) {
