@@ -2,10 +2,6 @@ const recast = require('recast');
 const astHelper = require('../astHelper');
 const actionHelper = require('../utils/actionHelper');
 
-// const TNT = recast.types.namedTypes;
-//
-
-
 function getExportPath(path, result, filePath) {
   let node = path.node;
   if (node.source && (node.source.type === 'StringLiteral' || node.source.type === 'Literal')) {
@@ -14,9 +10,11 @@ function getExportPath(path, result, filePath) {
       filePath: filePath
     });
   }
-  if (node.declaration && node.declaration.id && node.declaration.id.name) {
+
+  const fileName = node.declaration && (node.declaration.name || node.declaration.id && node.declaration.id.name);
+  if (fileName) {
     result.push({
-      fileName: node.declaration.id.name,
+      fileName: fileName,
       filePath: filePath
     });
   }

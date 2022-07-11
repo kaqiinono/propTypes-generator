@@ -1,0 +1,153 @@
+{
+  "alias": "xgezx",
+  "external_resources": [],
+  "npm_registries": [],
+  "id": 109,
+  "title": "JMTD PRO SUMMARY",
+  "base_git": null,
+  "view_count": null,
+  "like_count": null,
+  "user_liked": null,
+  "owned": true,
+  "template": "create-react-app",
+  "template_type": "NATIVE",
+  "theme": null,
+  "inserted_at": null,
+  "forked_from_sandbox": null,
+  "custom_template": null,
+  "source_id": "72777a8741811dc7880be67586222831",
+  "description": "JMTD PROP DEMO",
+  "privacy": 1,
+  "screenshot_url": "http://storage.jd.com/codesandbox/coders/xgezx/static/img/screenshot.png",
+  "entry": "index.js",
+  "fork_count": 0,
+  "original_git": null,
+  "authorization": null,
+  "version": 1,
+  "git": null,
+  "status": 0,
+  "team": {
+    "id": "wkpnk",
+    "name": "数据系统研发部"
+  },
+  "team_id": "00036370",
+  "author": {
+    "id": "rbbqvaz",
+    "name": "宋美诺"
+  },
+  "files": {
+    "/App.js": {
+      "Key": "coders/xgezx/project/App.js",
+      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "ETag": "9f904a526fbb55473f13a959f7fa0353",
+      "Size": 1731,
+      "code": "import ReactDOM from 'react-dom';\nimport PropTypes from 'prop-types';\nimport React from 'react';\nimport { format } from '@jd/jmtd-tools/es/number';\nimport {\n    Summary,\n    SummaryCardTitle,\n    SummaryCardIndex,\n    SummaryCardDescription,\n    ColorSummary\n} from '@jd/jmtd-pro';\nimport '@jd/jmtd-pro/dist/themes/default.css';\n\n\nconst data = [\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 12345,\n        circle: 0.23\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 41235,\n        circle: -0.43\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 4123,\n        circle: 0\n    }\n];\n\nfunction SummaryRender({\n    name, description, index, circle\n}) {\n    return (\n        <>\n            <SummaryCardTitle info={description}>{name}</SummaryCardTitle>\n            <SummaryCardIndex>{format(index, 'number_0_0')}</SummaryCardIndex>\n            <SummaryCardDescription\n                left='环比'\n                right={circle ? format(Math.abs(circle), 'percent_2_0_1') : '--'}\n                ascend={circle > 0}\n                descend={circle < 0}\n            />\n        </>\n    );\n}\n\nSummaryRender.propTypes = {\n    circle: PropTypes.number.isRequired,\n    description: PropTypes.string.isRequired,\n    index: PropTypes.number.isRequired,\n    name: PropTypes.string.isRequired\n};\n\nfunction App() {\n    return (\n        <Summary\n            data={data}\n            render={ColorSummary}\n            itemRender={SummaryRender}\n            cardProps={({ circle }) => ({\n                ascend: circle > 0,\n                descend: circle < 0\n            })}\n        />\n    );\n}\n\nexport default App;"
+    },
+    "/index.js": {
+      "Key": "coders/xgezx/project/index.js",
+      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "ETag": "d4c2d0bc2cd365df74477926ac12d0e6",
+      "Size": 257,
+      "code": "import React, { StrictMode } from \"react\";\nimport ReactDOM from \"react-dom\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nReactDOM.render(\n  <StrictMode>\n    <App />\n  </StrictMode>,\n  rootElement\n);"
+    },
+    "/package.json": {
+      "Key": "coders/xgezx/project/package.json",
+      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "ETag": "4913eebfe55832214b7fd2100562a531",
+      "Size": 216,
+      "code": "{\n  \"name\": \"sandpack-project\",\n  \"main\": \"/index.js\",\n  \"peerDependencies\": {\n    \"react\": \"^17.0.0\",\n    \"react-dom\": \"^17.0.0\",\n    \"@jd/jmtd\": \"1.27.0\",\n    \"@jd/jmtd-pro\": \"1.27.0\"\n  },\n  \"devDependencies\": {}\n}"
+    },
+    "/public/index.html": {
+      "Key": "coders/xgezx/project/public/index.html",
+      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "ETag": "ff57186267155742ad9276ce239f1ed3",
+      "Size": 234,
+      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+    },
+    "/styles.css": {
+      "Key": "coders/xgezx/project/styles.css",
+      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "ETag": "5b4166618666dbd92ea63eb23d77a66c",
+      "Size": 323,
+      "code": "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}"
+    }
+  },
+  "modules": [
+    {
+      "code": "import ReactDOM from 'react-dom';\nimport PropTypes from 'prop-types';\nimport React from 'react';\nimport { format } from '@jd/jmtd-tools/es/number';\nimport {\n    Summary,\n    SummaryCardTitle,\n    SummaryCardIndex,\n    SummaryCardDescription,\n    ColorSummary\n} from '@jd/jmtd-pro';\nimport '@jd/jmtd-pro/dist/themes/default.css';\n\n\nconst data = [\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 12345,\n        circle: 0.23\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 41235,\n        circle: -0.43\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 4123,\n        circle: 0\n    }\n];\n\nfunction SummaryRender({\n    name, description, index, circle\n}) {\n    return (\n        <>\n            <SummaryCardTitle info={description}>{name}</SummaryCardTitle>\n            <SummaryCardIndex>{format(index, 'number_0_0')}</SummaryCardIndex>\n            <SummaryCardDescription\n                left='环比'\n                right={circle ? format(Math.abs(circle), 'percent_2_0_1') : '--'}\n                ascend={circle > 0}\n                descend={circle < 0}\n            />\n        </>\n    );\n}\n\nSummaryRender.propTypes = {\n    circle: PropTypes.number.isRequired,\n    description: PropTypes.string.isRequired,\n    index: PropTypes.number.isRequired,\n    name: PropTypes.string.isRequired\n};\n\nfunction App() {\n    return (\n        <Summary\n            data={data}\n            render={ColorSummary}\n            itemRender={SummaryRender}\n            cardProps={({ circle }) => ({\n                ascend: circle > 0,\n                descend: circle < 0\n            })}\n        />\n    );\n}\n\nexport default App;",
+      "directory_shortid": null,
+      "id": "6a7aa332",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "6a7aa332",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "App.js",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "import React, { StrictMode } from \"react\";\nimport ReactDOM from \"react-dom\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nReactDOM.render(\n  <StrictMode>\n    <App />\n  </StrictMode>,\n  rootElement\n);",
+      "directory_shortid": null,
+      "id": "765377c1",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "765377c1",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "index.js",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "{\n  \"name\": \"sandpack-project\",\n  \"main\": \"/index.js\",\n  \"peerDependencies\": {\n    \"react\": \"^17.0.0\",\n    \"react-dom\": \"^17.0.0\",\n    \"@jd/jmtd\": \"1.27.0\",\n    \"@jd/jmtd-pro\": \"1.27.0\"\n  },\n  \"devDependencies\": {}\n}",
+      "directory_shortid": null,
+      "id": "3dd4cf6c",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "3dd4cf6c",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "package.json",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>",
+      "directory_shortid": "7ff31452",
+      "id": "4d97b35e",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "4d97b35e",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "index.html",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}",
+      "directory_shortid": null,
+      "id": "0ed6abd3",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "0ed6abd3",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "styles.css",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "upload_id": null
+    }
+  ],
+  "directories": [
+    {
+      "directory_shortid": null,
+      "id": "7ff31452",
+      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "shortid": "7ff31452",
+      "source_id": "72777a8741811dc7880be67586222831",
+      "title": "public",
+      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT"
+    }
+  ]
+}
