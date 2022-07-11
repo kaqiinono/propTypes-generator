@@ -1,9 +1,9 @@
 {
-  "alias": "xgezx",
+  "alias": "dmrkx",
   "external_resources": [],
   "npm_registries": [],
-  "id": 109,
-  "title": "JMTD PRO SUMMARY",
+  "id": 184,
+  "title": "Hello World!",
   "base_git": null,
   "view_count": null,
   "like_count": null,
@@ -15,11 +15,11 @@
   "inserted_at": null,
   "forked_from_sandbox": null,
   "custom_template": null,
-  "source_id": "72777a8741811dc7880be67586222831",
-  "description": "JMTD PROP DEMO",
+  "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+  "description": "Love U",
   "privacy": 1,
-  "screenshot_url": "http://storage.jd.com/codesandbox/coders/xgezx/static/img/screenshot.png",
-  "entry": "index.js",
+  "screenshot_url": null,
+  "entry": "ootstrap.js",
   "fork_count": 0,
   "original_git": null,
   "authorization": null,
@@ -36,118 +36,269 @@
     "name": "宋美诺"
   },
   "files": {
-    "/App.js": {
-      "Key": "coders/xgezx/project/App.js",
-      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
-      "ETag": "9f904a526fbb55473f13a959f7fa0353",
-      "Size": 1731,
-      "code": "import ReactDOM from 'react-dom';\nimport PropTypes from 'prop-types';\nimport React from 'react';\nimport { format } from '@jd/jmtd-tools/es/number';\nimport {\n    Summary,\n    SummaryCardTitle,\n    SummaryCardIndex,\n    SummaryCardDescription,\n    ColorSummary\n} from '@jd/jmtd-pro';\nimport '@jd/jmtd-pro/dist/themes/default.css';\n\n\nconst data = [\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 12345,\n        circle: 0.23\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 41235,\n        circle: -0.43\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 4123,\n        circle: 0\n    }\n];\n\nfunction SummaryRender({\n    name, description, index, circle\n}) {\n    return (\n        <>\n            <SummaryCardTitle info={description}>{name}</SummaryCardTitle>\n            <SummaryCardIndex>{format(index, 'number_0_0')}</SummaryCardIndex>\n            <SummaryCardDescription\n                left='环比'\n                right={circle ? format(Math.abs(circle), 'percent_2_0_1') : '--'}\n                ascend={circle > 0}\n                descend={circle < 0}\n            />\n        </>\n    );\n}\n\nSummaryRender.propTypes = {\n    circle: PropTypes.number.isRequired,\n    description: PropTypes.string.isRequired,\n    index: PropTypes.number.isRequired,\n    name: PropTypes.string.isRequired\n};\n\nfunction App() {\n    return (\n        <Summary\n            data={data}\n            render={ColorSummary}\n            itemRender={SummaryRender}\n            cardProps={({ circle }) => ({\n                ascend: circle > 0,\n                descend: circle < 0\n            })}\n        />\n    );\n}\n\nexport default App;"
+    "/.npmrc": {
+      "Key": "coders/dmrkx/project/.npmrc",
+      "LastModified": "Mon, 11 Jul 2022 10:49:08 GMT",
+      "ETag": "de807473cd3b02778c320c0911b28354",
+      "Size": 50,
+      "code": "registry=http://registry.m.jd.com\nsave-exact=true\n"
+    },
+    "/bootstrap.js": {
+      "Key": "coders/dmrkx/project/bootstrap.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "8312978240fb22bb32f2d2890c7efb98",
+      "Size": 202,
+      "code": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport Index from './index';\n\nconst root = document.createElement('div');\ndocument.body.appendChild(root);\nReactDOM.render(<Index />, root);\n"
+    },
+    "/component/App.jsx": {
+      "Key": "coders/dmrkx/project/component/App.jsx",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "9caf3300ccc9b6905b93b13d96300ab1",
+      "Size": 319,
+      "code": "import React from 'react';\nimport { Button } from '@jd/jmtd';\n\nexport default function App() {\n    return (\n        <Button\n            id='Button1'\n            data-test-id='e3442295-3a17-4f5d-8df3-c96d3e418a21'\n            semantic='default'\n            shape=''\n        >\n            DEMO\n        </Button>\n    );\n}\n"
+    },
+    "/config.js": {
+      "Key": "coders/dmrkx/project/config.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "3d5d1c515c76494ba87e37651827aefe",
+      "Size": 761,
+      "code": "export const pageConfig = {\n    /**\n     * 测试环境后端机器ip，在正式环境和预发环境下不生效\n     */\n    hostIp: null,\n\n    /**\n     * 测试环境业务请求网关，如hjy3，在正式和预发环境下不生效\n     */\n    gateway: null,\n\n    /**\n     * 业务请求源，如有特殊需求可覆盖，使用//或http://开头，在正式环境下不生效\n     */\n    origin: null,\n\n    /**\n     * 权限请求源，如有特殊需求可覆盖，使用//或http://开头，在正式环境下不生效\n     */\n    authOrigin: null,\n\n    /**\n     * 自定义请求拦截器，格式同Axios的拦截器，可定制请求配置\n     */\n    interceptors: null\n};\n\nexport const storeContext = {\n    erp: () => window.GEP_USER_INFO?.pin\n};\n"
     },
     "/index.js": {
-      "Key": "coders/xgezx/project/index.js",
-      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
-      "ETag": "d4c2d0bc2cd365df74477926ac12d0e6",
-      "Size": 257,
-      "code": "import React, { StrictMode } from \"react\";\nimport ReactDOM from \"react-dom\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nReactDOM.render(\n  <StrictMode>\n    <App />\n  </StrictMode>,\n  rootElement\n);"
+      "Key": "coders/dmrkx/project/index.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "4877b3d9690c80f64098d9f4daef6cb6",
+      "Size": 301,
+      "code": "import '@jd/jmtd/dist/themes/default.css';\nimport '@jd/jmtd-pro/dist/themes/default.css';\nimport '@jd/jmtd-charts/dist/themes/default.css';\nimport { GePageWrapper } from '@jd/jmtd-pro';\nimport Main from './main';\nimport { pageConfig } from './config';\n\nexport default GePageWrapper(Main, pageConfig);\n"
+    },
+    "/main.jsx": {
+      "Key": "coders/dmrkx/project/main.jsx",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "ac302cf066c73e38c6e07395ecd0e988",
+      "Size": 271,
+      "code": "import React from 'react';\nimport { Provider } from '@jd/jmtd-hooks';\nimport App from './component/App';\nimport store from './redux/store';\n\nexport default function Main() {\n    return (\n        <Provider store={store()}>\n            <App />\n        </Provider>\n    );\n}\n"
     },
     "/package.json": {
-      "Key": "coders/xgezx/project/package.json",
-      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
-      "ETag": "4913eebfe55832214b7fd2100562a531",
-      "Size": 216,
-      "code": "{\n  \"name\": \"sandpack-project\",\n  \"main\": \"/index.js\",\n  \"peerDependencies\": {\n    \"react\": \"^17.0.0\",\n    \"react-dom\": \"^17.0.0\",\n    \"@jd/jmtd\": \"1.27.0\",\n    \"@jd/jmtd-pro\": \"1.27.0\"\n  },\n  \"devDependencies\": {}\n}"
+      "Key": "coders/dmrkx/project/package.json",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "cd895a5e67e8ab85a671af00eadd831e",
+      "Size": 443,
+      "code": "{\n    \"main\": \"bootstrap.js\",\n    \"dependencies\": {\n        \"axios\": \"0.24.0\",\n        \"echarts\": \"5.0.2\",\n        \"lodash\": \"4.17.21\",\n        \"prop-types\": \"15.7.2\",\n        \"react\": \"17.0.2\",\n        \"react-dom\": \"17.0.2\",\n        \"@jd/jmtd\": \"1.29.0-p129.78\",\n        \"@jd/jmtd-pro\": \"1.29.0-p129.78\",\n        \"@jd/jmtd-hooks\": \"0.7.0-p129.78\",\n        \"@jd/jmtd-charts\": \"3.9.0-p129.78\",\n        \"@jd/jmtd-tools\": \"3.13.0-p129.78\"\n    }\n}"
     },
     "/public/index.html": {
-      "Key": "coders/xgezx/project/public/index.html",
-      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
-      "ETag": "ff57186267155742ad9276ce239f1ed3",
-      "Size": 234,
-      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+      "Key": "coders/dmrkx/project/public/index.html",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "23ef1dc0500894705b6f950f84ca19cd",
+      "Size": 204,
+      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n\n<body>\n</body>\n\n</html>\n"
     },
-    "/styles.css": {
-      "Key": "coders/xgezx/project/styles.css",
-      "LastModified": "Sun, 10 Jul 2022 04:43:18 GMT",
-      "ETag": "5b4166618666dbd92ea63eb23d77a66c",
-      "Size": 323,
-      "code": "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}"
+    "/redux/derived.js": {
+      "Key": "coders/dmrkx/project/redux/derived.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "e7e903292711dd5aeb5a8c50deb849a6",
+      "Size": 19,
+      "code": "export default {};\n"
+    },
+    "/redux/reducers.js": {
+      "Key": "coders/dmrkx/project/redux/reducers.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "bdd300985f2238e9f3d9bd21683d906a",
+      "Size": 83,
+      "code": "import { DefaultState } from '@jd/jmtd-hooks';\n\nexport default [DefaultState({})];\n"
+    },
+    "/redux/store.js": {
+      "Key": "coders/dmrkx/project/redux/store.js",
+      "LastModified": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "ETag": "72dd2dda332f69c6703ae29533ccbc0d",
+      "Size": 261,
+      "code": "import { createStore, combineReducers } from '@jd/jmtd-hooks';\nimport reducers from './reducers';\nimport derived from './derived';\nimport { storeContext } from '../config';\n\nexport default () => createStore(combineReducers(...reducers), derived, storeContext);\n"
     }
   },
   "modules": [
     {
-      "code": "import ReactDOM from 'react-dom';\nimport PropTypes from 'prop-types';\nimport React from 'react';\nimport { format } from '@jd/jmtd-tools/es/number';\nimport {\n    Summary,\n    SummaryCardTitle,\n    SummaryCardIndex,\n    SummaryCardDescription,\n    ColorSummary\n} from '@jd/jmtd-pro';\nimport '@jd/jmtd-pro/dist/themes/default.css';\n\n\nconst data = [\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 12345,\n        circle: 0.23\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 41235,\n        circle: -0.43\n    },\n\n    {\n        name: '指标名称',\n        description: '指标说明',\n        index: 4123,\n        circle: 0\n    }\n];\n\nfunction SummaryRender({\n    name, description, index, circle\n}) {\n    return (\n        <>\n            <SummaryCardTitle info={description}>{name}</SummaryCardTitle>\n            <SummaryCardIndex>{format(index, 'number_0_0')}</SummaryCardIndex>\n            <SummaryCardDescription\n                left='环比'\n                right={circle ? format(Math.abs(circle), 'percent_2_0_1') : '--'}\n                ascend={circle > 0}\n                descend={circle < 0}\n            />\n        </>\n    );\n}\n\nSummaryRender.propTypes = {\n    circle: PropTypes.number.isRequired,\n    description: PropTypes.string.isRequired,\n    index: PropTypes.number.isRequired,\n    name: PropTypes.string.isRequired\n};\n\nfunction App() {\n    return (\n        <Summary\n            data={data}\n            render={ColorSummary}\n            itemRender={SummaryRender}\n            cardProps={({ circle }) => ({\n                ascend: circle > 0,\n                descend: circle < 0\n            })}\n        />\n    );\n}\n\nexport default App;",
+      "code": "registry=http://registry.m.jd.com\nsave-exact=true\n",
       "directory_shortid": null,
-      "id": "6a7aa332",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "id": "44c15268",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:08 GMT",
       "is_binary": false,
       "sha": null,
-      "shortid": "6a7aa332",
-      "source_id": "72777a8741811dc7880be67586222831",
-      "title": "App.js",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "shortid": "44c15268",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": ".npmrc",
+      "updated_at": "Mon, 11 Jul 2022 10:49:08 GMT",
       "upload_id": null
     },
     {
-      "code": "import React, { StrictMode } from \"react\";\nimport ReactDOM from \"react-dom\";\nimport \"./styles.css\";\n\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nReactDOM.render(\n  <StrictMode>\n    <App />\n  </StrictMode>,\n  rootElement\n);",
+      "code": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport Index from './index';\n\nconst root = document.createElement('div');\ndocument.body.appendChild(root);\nReactDOM.render(<Index />, root);\n",
       "directory_shortid": null,
-      "id": "765377c1",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "id": "1e51e4c3",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "is_binary": false,
       "sha": null,
-      "shortid": "765377c1",
-      "source_id": "72777a8741811dc7880be67586222831",
+      "shortid": "1e51e4c3",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "bootstrap.js",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "import React from 'react';\nimport { Button } from '@jd/jmtd';\n\nexport default function App() {\n    return (\n        <Button\n            id='Button1'\n            data-test-id='e3442295-3a17-4f5d-8df3-c96d3e418a21'\n            semantic='default'\n            shape=''\n        >\n            DEMO\n        </Button>\n    );\n}\n",
+      "directory_shortid": "0d451f12",
+      "id": "5ed23fd4",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "5ed23fd4",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "App.jsx",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "export const pageConfig = {\n    /**\n     * 测试环境后端机器ip，在正式环境和预发环境下不生效\n     */\n    hostIp: null,\n\n    /**\n     * 测试环境业务请求网关，如hjy3，在正式和预发环境下不生效\n     */\n    gateway: null,\n\n    /**\n     * 业务请求源，如有特殊需求可覆盖，使用//或http://开头，在正式环境下不生效\n     */\n    origin: null,\n\n    /**\n     * 权限请求源，如有特殊需求可覆盖，使用//或http://开头，在正式环境下不生效\n     */\n    authOrigin: null,\n\n    /**\n     * 自定义请求拦截器，格式同Axios的拦截器，可定制请求配置\n     */\n    interceptors: null\n};\n\nexport const storeContext = {\n    erp: () => window.GEP_USER_INFO?.pin\n};\n",
+      "directory_shortid": null,
+      "id": "7e339c8a",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "7e339c8a",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "config.js",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "import '@jd/jmtd/dist/themes/default.css';\nimport '@jd/jmtd-pro/dist/themes/default.css';\nimport '@jd/jmtd-charts/dist/themes/default.css';\nimport { GePageWrapper } from '@jd/jmtd-pro';\nimport Main from './main';\nimport { pageConfig } from './config';\n\nexport default GePageWrapper(Main, pageConfig);\n",
+      "directory_shortid": null,
+      "id": "149a6642",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "149a6642",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
       "title": "index.js",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "upload_id": null
     },
     {
-      "code": "{\n  \"name\": \"sandpack-project\",\n  \"main\": \"/index.js\",\n  \"peerDependencies\": {\n    \"react\": \"^17.0.0\",\n    \"react-dom\": \"^17.0.0\",\n    \"@jd/jmtd\": \"1.27.0\",\n    \"@jd/jmtd-pro\": \"1.27.0\"\n  },\n  \"devDependencies\": {}\n}",
+      "code": "import React from 'react';\nimport { Provider } from '@jd/jmtd-hooks';\nimport App from './component/App';\nimport store from './redux/store';\n\nexport default function Main() {\n    return (\n        <Provider store={store()}>\n            <App />\n        </Provider>\n    );\n}\n",
       "directory_shortid": null,
-      "id": "3dd4cf6c",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "id": "232668d8",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "is_binary": false,
       "sha": null,
-      "shortid": "3dd4cf6c",
-      "source_id": "72777a8741811dc7880be67586222831",
+      "shortid": "232668d8",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "main.jsx",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "{\n    \"main\": \"bootstrap.js\",\n    \"dependencies\": {\n        \"axios\": \"0.24.0\",\n        \"echarts\": \"5.0.2\",\n        \"lodash\": \"4.17.21\",\n        \"prop-types\": \"15.7.2\",\n        \"react\": \"17.0.2\",\n        \"react-dom\": \"17.0.2\",\n        \"@jd/jmtd\": \"1.29.0-p129.78\",\n        \"@jd/jmtd-pro\": \"1.29.0-p129.78\",\n        \"@jd/jmtd-hooks\": \"0.7.0-p129.78\",\n        \"@jd/jmtd-charts\": \"3.9.0-p129.78\",\n        \"@jd/jmtd-tools\": \"3.13.0-p129.78\"\n    }\n}",
+      "directory_shortid": null,
+      "id": "b5af34ec",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "b5af34ec",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
       "title": "package.json",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "upload_id": null
     },
     {
-      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>",
+      "code": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n\n<body>\n</body>\n\n</html>\n",
       "directory_shortid": "7ff31452",
-      "id": "4d97b35e",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "id": "37dfb2f3",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "is_binary": false,
       "sha": null,
-      "shortid": "4d97b35e",
-      "source_id": "72777a8741811dc7880be67586222831",
+      "shortid": "37dfb2f3",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
       "title": "index.html",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "upload_id": null
     },
     {
-      "code": "body {\n  font-family: sans-serif;\n  -webkit-font-smoothing: auto;\n  -moz-font-smoothing: auto;\n  -moz-osx-font-smoothing: grayscale;\n  font-smoothing: auto;\n  text-rendering: optimizeLegibility;\n  font-smooth: always;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\nh1 {\n  font-size: 1.5rem;\n}",
-      "directory_shortid": null,
-      "id": "0ed6abd3",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "code": "export default {};\n",
+      "directory_shortid": "74bcb69c",
+      "id": "049987af",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "is_binary": false,
       "sha": null,
-      "shortid": "0ed6abd3",
-      "source_id": "72777a8741811dc7880be67586222831",
-      "title": "styles.css",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "shortid": "049987af",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "derived.js",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "import { DefaultState } from '@jd/jmtd-hooks';\n\nexport default [DefaultState({})];\n",
+      "directory_shortid": "74bcb69c",
+      "id": "ec92c7ca",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "ec92c7ca",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "reducers.js",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "upload_id": null
+    },
+    {
+      "code": "import { createStore, combineReducers } from '@jd/jmtd-hooks';\nimport reducers from './reducers';\nimport derived from './derived';\nimport { storeContext } from '../config';\n\nexport default () => createStore(combineReducers(...reducers), derived, storeContext);\n",
+      "directory_shortid": "74bcb69c",
+      "id": "0467b7ab",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "is_binary": false,
+      "sha": null,
+      "shortid": "0467b7ab",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "store.js",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "upload_id": null
     }
   ],
   "directories": [
     {
       "directory_shortid": null,
+      "id": "0d451f12",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "shortid": "0d451f12",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "component",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT"
+    },
+    {
+      "directory_shortid": null,
       "id": "7ff31452",
-      "inserted_at": "Sun, 10 Jul 2022 04:43:18 GMT",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
       "shortid": "7ff31452",
-      "source_id": "72777a8741811dc7880be67586222831",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
       "title": "public",
-      "updated_at": "Sun, 10 Jul 2022 04:43:18 GMT"
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT"
+    },
+    {
+      "directory_shortid": null,
+      "id": "74bcb69c",
+      "inserted_at": "Mon, 11 Jul 2022 10:49:06 GMT",
+      "shortid": "74bcb69c",
+      "source_id": "b14d22615888dc2f3c605e82e8dd1a81",
+      "title": "redux",
+      "updated_at": "Mon, 11 Jul 2022 10:49:06 GMT"
     }
-  ]
+  ],
+  "npm_dependencies": {
+    "axios": "0.24.0",
+    "echarts": "5.0.2",
+    "lodash": "4.17.21",
+    "prop-types": "15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "@jd/jmtd": "1.29.0-p129.78",
+    "@jd/jmtd-pro": "1.29.0-p129.78",
+    "@jd/jmtd-hooks": "0.7.0-p129.78",
+    "@jd/jmtd-charts": "3.9.0-p129.78",
+    "@jd/jmtd-tools": "3.13.0-p129.78"
+  }
 }
