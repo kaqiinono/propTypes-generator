@@ -2,7 +2,8 @@ const recast = require('recast');
 const astHelper = require('../astHelper');
 const actionHelper = require('../utils/actionHelper');
 
-function getExportPath(path, result, filePath) {
+function getExportPath(path, filePath) {
+  const result = [];
   let node = path.node;
   if (node.source && (node.source.type === 'StringLiteral' || node.source.type === 'Literal')) {
     result.push({
@@ -18,6 +19,7 @@ function getExportPath(path, result, filePath) {
       filePath: filePath
     });
   }
+  return result;
 }
 
 function getImportPath(path, callback) {
@@ -33,51 +35,63 @@ function validFile(files, name) {
   if (!name) {
     return;
   }
+
   if (name.endsWith('.js') || name.endsWith('.jsx')) {
     return files[name];
   }
   return files[`${name}.js`] || files[`${name}.jsx`] || files[`${name}.ts`] || files[`${name}.tsx`];
 }
 
-function findFromImport(files, filePath, result = []) {
+function findFromImport(files, filePath) {
+  let result = [];
   const fileName = validFile(files, filePath);
   const ast = fileName && astHelper.flowAst(fileName && fileName.code);
   if (ast) {
     recast.visit(ast, {
       visitImportDeclaration: function(path) {
         getImportPath(path, (p) => {
-          findExports(files, p.slice(1), result);
+          result = result.concat(findExports(files, p.slice(1)));
         });
         this.traverse(path);
       }
     });
   }
+  return result;
 }
 
 
-function findExports(files, filePath = '/index.js', result = []) {
+function findExports(files, filePath = '/index.js') {
   const fileName = validFile(files, filePath);
   const ast = astHelper.flowAst(fileName && fileName.code);
+  let result = [];
   if (ast) {
     recast.visit(ast, {
       visitExportAllDeclaration: function(path) {
-        getExportPath(path, result, filePath);
+        result = result.concat(getExportPath(path, filePath));
         this.traverse(path);
       },
       visitExportNamedDeclaration: function(path) {
-        getExportPath(path, result, filePath);
+        result = result.concat(getExportPath(path, filePath));
         this.traverse(path);
       },
       visitExportDefaultDeclaration: function(path) {
-        getExportPath(path, result, filePath);
+        result = result.concat(getExportPath(path, filePath));
         this.traverse(path);
       },
     });
   }
 
   if (result.length <= 0) {
-    findFromImport(files, filePath, result);
+    result = findFromImport(files, filePath);
   }
+
+  for (const r of result) {
+    const file = validFile(files, r.filePath);
+    if (/<Provider.*>.*\s+.*\s+<\/Provider>/g.test(file?.code)) {
+      return findFromImport(files, r.filePath);
+    }
+  }
+
   return result;
 }
 
