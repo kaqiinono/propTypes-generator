@@ -87,7 +87,7 @@ function findExports(files, filePath = '/index.js') {
 
   for (const r of result) {
     const file = validFile(files, r.filePath);
-    if (/<Provider.*>.*\s+.*\s+<\/Provider>/g.test(file?.code)) {
+    if (file && /<Provider.*>.*\s+.*\s+<\/Provider>/g.test(file.code)) {
       return findFromImport(files, r.filePath);
     }
   }
