@@ -1,18 +1,26 @@
 {
   "name": "proptypes-generator",
-  "main": "dist/proptypes-generator.js",
   "description": "Auto generate react's propTypes",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "publisher": "songmeinuo",
   "author": "songmeinuo",
   "license": "MIT",
+  "main": "dist/lib/index.js",
+  "unpkg": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack --mode production",
+    "ebuild": "npm run esm && npm run cjs",
+    "esm": "esbuild index.js --bundle --splitting --outdir=dist/es --format=esm --platform=node",
+    "cjs": "esbuild index.js --bundle --outdir=dist/lib --format=cjs --platform=node",
     "patch": "npm version patch -m 'Update Version patch by NPM' | xargs git push origin && git push",
-    "prepublishOnly": "npm run patch && npm run build"
+    "prepublishOnly": "npm run patch && npm run ebuild"
   },
   "devDependencies": {
-    "esbuild": "^0.14.43",
+    "esbuild": "^0.14.54",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
@@ -28,8 +36,5 @@
     "PropTypes",
     "generate",
     "ast"
-  ],
-  "files": [
-    "dist"
   ]
 }
