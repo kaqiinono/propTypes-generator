@@ -1,6 +1,7 @@
 const recast = require('recast');
 const astHelper = require('../astHelper');
 const actionHelper = require('../utils/actionHelper');
+const nodePath = require('path');
 
 function getExportPath(path, filePath) {
   const result = [];
@@ -50,7 +51,7 @@ function findFromImport(files, filePath) {
     recast.visit(ast, {
       visitImportDeclaration: function(path) {
         getImportPath(path, (p) => {
-          result = result.concat(findExports(files, p.slice(1)));
+          result = result.concat(findExports(files, nodePath.join(filePath, '..', p)));
         });
         this.traverse(path);
       }
