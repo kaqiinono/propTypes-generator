@@ -2,7 +2,7 @@
   "name": "proptypes-generator",
   "main": "dist/proptypes-generator.js",
   "description": "Auto generate react's propTypes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "songmeinuo",
   "author": "songmeinuo",
   "license": "MIT",
